@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>All Movies</h2>
+
+    <form action="{{ url_for('sortby') }}" method="post">    
+        <label for="sortby">Sort By:</label>
+        <select  name="sortby" id="sortby">
+            <option value="title">Title</option>
+            <option value="genre">Genre</option>
+            <option value="year">Year</option>
+        </select>
+        <button type="submit">Apply</button>
+    </form>
+
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <strong>{{ movie.title }}</strong> ({{ movie.year }}) - {{ movie.genre }}
+                <a href="{{ url_for('update_movie', m_id=movie.m_id) }}">Edit</a> |
+                <form action="{{ url_for('delete_movie', m_id=movie.m_id) }}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
