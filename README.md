@@ -1,1 +1,1 @@
-A Movie Database app which you can add, edit, delete, total moives in database(below the title) and arrange them by titel, year or genre.
+A Movie Database app which you can add, edit, delete, total moives in database(below the title) and arrange them by titel, year or genre. 
