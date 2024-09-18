@@ -3,7 +3,7 @@ name: Deploy to AWS Lambda
 on:
   push:
     branches:
-      - main  # Or whatever branch you want to trigger the deployment
+      - main 
 
 jobs:
   deploy:
@@ -16,12 +16,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.12  # Ensure this matches your Python version
+        python-version: 3.12  
 
     - name: Install dependencies
       run: |
-        python -m venv venv
-        source venv/bin/activate
+        python -m venv .venv
+        source .venv/bin/activate
         pip install -r requirements.txt
         pip install zappa
 
@@ -30,9 +30,9 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1  # Your region
+        aws-region: eu-west-2  # Your region
 
     - name: Deploy to AWS Lambda
       run: |
-        source venv/bin/activate
-        zappa deploy dev  # Or zappa update dev for existing deployment
+        source .venv/bin/activate
+        zappa update firstp-production 
