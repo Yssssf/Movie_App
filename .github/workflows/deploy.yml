@@ -35,4 +35,4 @@ jobs:
     - name: Deploy to AWS Lambda
       run: |
         source venv/bin/activate
-        zappa update firstp-production 
+        zappa update firstp 
