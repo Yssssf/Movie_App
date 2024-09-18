@@ -1,4 +1,4 @@
-#!/Users/yousefyaghoubi/Desktop/Projects/FlaskProjects/FirstP/.venv/bin/python
+#!/Users/yousefyaghoubi/Desktop/Projects/FlaskProjects/FirstP/.venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
