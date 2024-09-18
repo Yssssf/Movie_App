@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.12  
+        python-version: 3.12.2
 
     - name: Install dependencies
       run: |
@@ -35,4 +35,4 @@ jobs:
     - name: Deploy to AWS Lambda
       run: |
         source venv/bin/activate
-        zappa update firstp 
+        zappa update production
